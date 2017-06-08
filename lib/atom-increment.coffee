@@ -91,7 +91,12 @@ module.exports = AtomIncrement =
           selectionList = editor.getSelections()
 
         checkpoint = editor.createCheckpoint()
-
+        # alert(parseInt(selectionList[0].getText())
+        input = selectionList[0].getText().split(':')
+        if(selectionList[0].getText().length>0)
+          `incValue = parseInt(selectionList[0].getText(), 10 );`
+          if(input.length>1)
+            `incSize = parseInt(input[1], 10 );`
         for i in [0..selectionList.length-1]
           if (type == 'number')
             result = incValue.toString()
